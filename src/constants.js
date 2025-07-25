@@ -153,7 +153,7 @@ export const certifications = [
     keywords: ["NPTEL", "Certified", "Java SE"],
     image:nptelLogo, // Place your image in public/certificates
     certificateLink: "https://archive.nptel.ac.in/content/noc/NOC24/SEM1/Ecertificates/106/noc24-cs43/Course/NPTEL24CS43S96140045130652942.pdf", // Replace with real link if available
-    downloadLink: "/certificates/nptel_java.pdf", // Replace with actual file
+    downloadLink: "/nptel_java.pdf", // Replace with actual file
   },
     {
    id: 2,
@@ -165,7 +165,7 @@ export const certifications = [
     keywords: ["Frontend", "JavaScript", "Simplilearn"],
     image: simplilearnLogo,
     certificateLink: "https://drive.google.com/file/d/124CuZKLD9BydFyNdqA-jgxZyJ2T-rIDj/view?usp=drivesdk", // Replace if available
-    downloadLink: "/certificates/Simplilearn.pdf",
+    downloadLink: "/Simplilearn.pdf",
   },
  {
   id: 3,
@@ -177,7 +177,7 @@ export const certifications = [
   keywords: ["PowerBI", "Dashboard", "Workshop"],
   image:powerBiLogo, // Replace with actual image path
   certificateLink: "https://unstop.com/workshops/powerbi-ai-dashboard", // Replace with actual URL
-  downloadLink: "/certificates/powerbi_workshop.pdf", // Replace with your PDF path
+  downloadLink: "/powerbi_workshop.pdf", // Replace with your PDF path
 },
 
 ];
