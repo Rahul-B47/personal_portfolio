@@ -12,15 +12,15 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_mi3dhuc",  // Replace with your EmailJS Service ID
-        "template_j7uuvz9",  // Replace with your EmailJS Template ID
+        "service_npuidq9",
+        "template_j7uuvz9",
         form.current,
-        "y0rLub2E3YGHpP4Eq"  // Replace with your EmailJS Public Key
+        "y0rLub2E3YGHpP4Eq"
       )
       .then(
         () => {
           setIsSent(true);
-          form.current.reset(); // Reset form fields after sending
+          form.current.reset();
           toast.success("Message sent successfully! ✅", {
             position: "top-right",
             autoClose: 3000,
@@ -51,8 +51,15 @@ const Contact = () => {
       id="contact"
       className="flex flex-col items-center justify-center py-24 px-[12vw] md:px-[7vw] lg:px-[20vw]"
     >
-      {/* Toast Container */}
-      <ToastContainer />
+      {/* Toast Container with custom size */}
+      <ToastContainer
+        toastClassName={() =>
+          "bg-[#1b1530] text-white text-sm md:text-base px-4 py-2 rounded shadow-md"
+        }
+        bodyClassName={() =>
+          "text-sm md:text-base font-medium leading-snug"
+        }
+      />
 
       {/* Section Title */}
       <div className="text-center mb-16">
@@ -98,8 +105,7 @@ const Contact = () => {
             required
             className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
           />
-          
-          {/* Send Button */}
+
           <button
             type="submit"
             className="w-full bg-gradient-to-r from-purple-600 to-pink-500 py-3 text-white font-semibold rounded-md hover:opacity-90 transition"

@@ -153,7 +153,7 @@ export const certifications = [
     keywords: ["NPTEL", "Certified", "Java SE"],
     image:nptelLogo, // Place your image in public/certificates
     certificateLink: "https://archive.nptel.ac.in/content/noc/NOC24/SEM1/Ecertificates/106/noc24-cs43/Course/NPTEL24CS43S96140045130652942.pdf", // Replace with real link if available
-    downloadLink: "/nptel_java.pdf", // Replace with actual file
+    downloadLink: "c/nptel_java.pdf", // Replace with actual file
   },
     {
    id: 2,
