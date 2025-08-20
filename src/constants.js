@@ -50,7 +50,9 @@ import canaraLogo from './assets/education_logo/canaraLogo.png';
 import simplilearnLogo from "./assets/certifications_logo/simplilearn_logo.png";
 import nptelLogo from "./assets/certifications_logo/nptel_Logo.png";
 import powerBiLogo from "./assets/certifications_logo/powerbi_workshop_logo.png";
-
+import futureInternshipLogo from "./assets/certifications_logo/futureInterns_logo.png";
+import ibmSkillsBuildLogo from "./assets/certifications_logo/ibm_skills_build_logo.png";
+import googleAnalyticsLogo from "./assets/certifications_logo/google_analytics_logo.png";
 
 // Project Section Logo's
 
@@ -60,6 +62,7 @@ import lostFoundLogo from "./assets/project_logo/lostFoundLogo.png";
 import eshopLogo from "./assets/project_logo/eshopLogo.png";
 import bmiLogo from "./assets/project_logo/bmiLogo.png";
 import tictactoeLogo from "./assets/project_logo/tictactoeLogo.png";
+import spotifyCloneLogo from "./assets/project_logo/spotifyLogo.png";   
 
 
 
@@ -153,7 +156,7 @@ export const certifications = [
     keywords: ["NPTEL", "Certified", "Java SE"],
     image:nptelLogo, // Place your image in public/certificates
     certificateLink: "https://archive.nptel.ac.in/content/noc/NOC24/SEM1/Ecertificates/106/noc24-cs43/Course/NPTEL24CS43S96140045130652942.pdf", // Replace with real link if available
-    downloadLink: "c/nptel_java.pdf", // Replace with actual file
+    downloadLink: "/nptel_java.pdf", // Replace with actual file
   },
     {
    id: 2,
@@ -176,9 +179,50 @@ export const certifications = [
   skills: ["PowerBI", "AI Dashboards", "Data Visualization"],
   keywords: ["PowerBI", "Dashboard", "Workshop"],
   image:powerBiLogo, // Replace with actual image path
-  certificateLink: "https://unstop.com/workshops/powerbi-ai-dashboard", // Replace with actual URL
+  certificateLink: "https://certx.in/certificate/36a28147-6eed-47a5-8342-e5f926ebba61492747", // Replace with actual URL
   downloadLink: "/powerbi_workshop.pdf", // Replace with your PDF path
 },
+
+{
+  id: 4,
+  title: "Full Stack Web Development Internship",
+  issuer: "Future Interns",
+  date: "Jul 2025",
+  desc: "Completed a 1-month internship in Full Stack Web Development with outstanding performance.",
+  skills: ["Full Stack Development", "Web Development"],
+  keywords: ["Internship", "Web Development", "Full Stack"],
+  image: futureInternshipLogo, // Replace with actual image path
+  certificateLink: "https://drive.google.com/file/d/1BnrXV8la5VFvPYixfrjGR6Vytd4b6aF-/view?usp=drive_link", // Using email as contact
+  downloadLink: "/FutureInterns_certificate.pdf", // Replace with your PDF path
+},
+{
+  id: 5,
+  title: "Data Fundamentals",
+  issuer: "IBM SkillsBuild",
+  date: "Jul 21, 2025",
+  desc: "Successfully satisfied the requirements for Data Fundamentals certification from IBM.",
+  skills: ["Data Fundamentals", "Data Literacy"],
+  keywords: ["IBM", "Data Fundamentals", "Certification"],
+  image: ibmSkillsBuildLogo, // Replace with actual image path
+  certificateLink: "https://drive.google.com/file/d/1Xt9wcX9E6SfAu9X-N33vkwRrPI5NAu_h/view?usp=drive_link",
+  downloadLink: "/IBM_Data_Fundamentals.pdf", // Replace with your PDF path
+},
+{
+  id: 6,
+  title: "Google Analytics Certification",
+  issuer: "Google",
+  date: "Jul 27, 2025",
+  desc: "Successfully completed and certified in Google Analytics. Certification valid until July 27, 2026.",
+  skills: ["Google Analytics", "Data Analysis", "Web Analytics"],
+  keywords: ["Google", "Analytics", "Certification"],
+  image: googleAnalyticsLogo, // Replace with actual image path
+  certificateLink: "https://drive.google.com/file/d/1dZD6vXMqYvoSaDJPAz3zjLBvSpCuxDYZ/view?usp=drive_link", // Example link (replace with actual verification URL if available)
+  downloadLink: "/Google_Analytics_certificate.pdf", // Replace with your PDF path
+  metadata: {
+    expiryDate: "Jul 27, 2026",
+    certificateId: "156257823"
+  }
+}
 
 ];
 
@@ -327,8 +371,20 @@ export const projects = [
   webapp: "https://rahulworks-dev.onrender.com", // replace with real deployed link
   image: portfolioLogo, // replace with actual image variable
 },
-  {
+
+{
     id: 7,
+    title: "Spotify Clone",
+    description:
+      "A full-featured Spotify-like music streaming web app built using React, Next.js, Tailwind CSS, and Firebase. Features include dynamic playlists, user authentication, song playback, like/favorite songs, search, and smart suggestions based on user taste.",
+    tags: ["React", "Next.js", "Tailwind CSS", "Firebase", "Web App", "Music Streaming", "Youtube API"],
+    github: "https://github.com/Rahul-B47/spotify_clone",
+    webapp: "https://spotify-clone-ndqh.onrender.com/", // update with live URL if deployed
+    image: spotifyCloneLogo,
+},
+
+  {
+    id: 8,
     title: "Tic Tac Toe Game",
     description:
       "Classic Tic Tac Toe game built using HTML, CSS, and JavaScript. Features game reset, win detection, and simple AI opponent in a clean responsive layout.",
