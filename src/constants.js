@@ -52,7 +52,7 @@ import nptelLogo from "./assets/certifications_logo/nptel_Logo.png";
 import powerBiLogo from "./assets/certifications_logo/powerbi_workshop_logo.png";
 import futureInternshipLogo from "./assets/certifications_logo/futureInterns_logo.png";
 import ibmSkillsBuildLogo from "./assets/certifications_logo/ibm_skills_build_logo.png";
-import googleAnalyticsLogo from "./assets/certifications_logo/google_analytics_logo.png";
+import googleAnalyticsLogo from "./assets/certifications_logo/google_Analytics_certification__logo.png";
 
 // Project Section Logo's
 
