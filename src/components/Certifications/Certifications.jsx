@@ -86,16 +86,16 @@ const Certifications = () => {
 
       {/* Modal */}
       {selectedCert && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-80 px-4 sm:px-6">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-md px-4 sm:px-6 animate-fadeIn">
           <div
             ref={modalRef}
-            className="bg-[#181126] w-full max-w-lg rounded-xl overflow-hidden shadow-2xl animate-fadeIn"
+            className="relative z-[10000] bg-[#181126] w-full max-w-lg rounded-xl overflow-hidden shadow-2xl animate-scaleIn"
           >
             {/* Close Button */}
             <div className="flex justify-end p-4">
               <button
                 onClick={() => setSelectedCert(null)}
-                className="text-white text-2xl font-bold hover:text-purple-500"
+                className="text-white text-2xl font-bold hover:text-purple-500 transition"
               >
                 &times;
               </button>
