@@ -10,6 +10,7 @@ import nodejsLogo from './assets/tech_logo/nodejs.png';
 import expressjsLogo from './assets/tech_logo/express.png';
 import campuspulseLogo from "./assets/project_logo/campuspulseLogo.png";
 import geminiLogo from "./assets/project_logo/geminiLogo.png";
+import skincancerLogo from "./assets/project_logo/skincancerLogo.png";  
 
 
 
@@ -315,6 +316,7 @@ export const projects = [
     image: whatsappLogo,
     apk: "https://drive.google.com/file/d/14X7Ox4pSVVbETNgnZemhnP7OBrw_9yKr/view?usp=drivesdk",
   },
+  
   {
     id: 2,
     title: "Lost & Found Portal (Ongoing)",
@@ -324,8 +326,27 @@ export const projects = [
     github:"", // update if different
     image: lostFoundLogo,
   },
+ {
+  id: 3,
+  title: "DermDetect AI :- Skin Cancer Detection and Classification Using Deep Learning Techniques",
+  description:
+    "Developed an AI-powered medical image analysis system for early skin cancer detection using deep learning techniques. Implemented preprocessing, data augmentation, and transfer learning with CNN-based models to classify dermoscopic images into multiple lesion categories. Integrated Grad-CAM visual explanations to improve interpretability and support clinical decision-making.",
+  tags: [
+    "Python",
+    "TensorFlow",
+    "Keras",
+    "Deep Learning",
+    "CNN",
+    "EfficientNet",
+    "Medical Imaging",
+    "Computer Vision"
+  ],
+  github: "https://github.com/Rahul-B47/skin-cancer-detection-and-classification--using-deep-learning-techniques",
+  video: "https://drive.google.com/file/d/1lsIDasnP31qDt4nxPGFocUXwUmTX6sdc/view?usp=sharing",
+  image: skincancerLogo
+},
   {
-    id: 3,
+    id: 4,
     title: "E-Shop – Full Stack E-Commerce Storefront",
     description:
       "A complete e-commerce platform with user authentication (OTP & Google), product listing, cart, order handling, and admin dashboard. Built during Future Interns internship.",
@@ -342,7 +363,7 @@ export const projects = [
     image: eshopLogo,
   },
   {
-    id: 4,
+    id: 5,
     title: "BMI Calculator",
     description:
       "A simple yet responsive web app to calculate Body Mass Index based on height and weight inputs. Provides instant results with category info (underweight, healthy, etc).",
@@ -352,7 +373,7 @@ export const projects = [
     image: bmiLogo,
   },
   {
-    id: 5,
+    id: 6,
     title: "Gemini Clone",
     description:
       "A chatbot interface replicating Gemini AI using ReactJS and Google's Generative AI API. Enables real-time natural language interaction with smart prompts and output.",
@@ -362,7 +383,7 @@ export const projects = [
     image: geminiLogo,
   },
   {
-  id: 6,
+  id: 7,
   title: "Personal Portfolio",
   description:
     "A sleek and interactive personal portfolio website showcasing my projects, skills, certifications, and resume. Built using modern frontend technologies with smooth animations and responsive design.",
@@ -373,7 +394,7 @@ export const projects = [
 },
 
 {
-    id: 7,
+    id: 8,
     title: "Spotify Clone",
     description:
       "A full-featured Spotify-like music streaming web app built using React, Next.js, Tailwind CSS, and Firebase. Features include dynamic playlists, user authentication, song playback, like/favorite songs, search, and smart suggestions based on user taste.",
@@ -384,7 +405,7 @@ export const projects = [
 },
 
   {
-    id: 8,
+    id: 9,
     title: "Tic Tac Toe Game",
     description:
       "Classic Tic Tac Toe game built using HTML, CSS, and JavaScript. Features game reset, win detection, and simple AI opponent in a clean responsive layout.",

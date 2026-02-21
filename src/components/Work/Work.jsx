@@ -3,7 +3,8 @@ import {
   FiGithub,
   FiExternalLink,
   FiDownload,
-} from "react-icons/fi"; // 👈 Import icons
+  FiPlayCircle, // Added for the Demo button
+} from "react-icons/fi";
 
 const Work = ({ title, description, projects }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -37,7 +38,7 @@ const Work = ({ title, description, projects }) => {
   return (
     <section
       id={title.toLowerCase().replace(/\s+/g, "-")}
-      className="py-24 pb-24 px-[4vw] md:px-[3vw] lg:px-[6vw] font-sans relative"
+      className="py-24 pb-24 px-[4vw] md:px-[3vw] lg:px-[6vw] font-sans relative bg-black"
     >
       {/* Section Title */}
       <div className="text-center mb-16">
@@ -55,7 +56,7 @@ const Work = ({ title, description, projects }) => {
             <div
               key={project.id}
               onClick={() => handleOpenModal(project)}
-              className="border border-white bg-gray-900 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/50 hover:-translate-y-2 transition-transform duration-300"
+              className="border border-white/10 bg-gray-900/50 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-purple-500/30 hover:-translate-y-2 transition-all duration-300"
             >
               <div className="p-4">
                 <img
@@ -68,14 +69,14 @@ const Work = ({ title, description, projects }) => {
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-500 mb-4 pt-4 line-clamp-3">
+                <p className="text-gray-400 mb-4 pt-2 line-clamp-3">
                   {project.description}
                 </p>
-                <div className="mb-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-block bg-[#251f38] text-xs font-semibold text-purple-500 rounded-full px-2 py-1 mr-2 mb-2"
+                      className="inline-block bg-purple-900/30 text-[10px] uppercase tracking-wider font-bold text-purple-400 rounded-md px-2 py-1"
                     >
                       {tag}
                     </span>
@@ -88,78 +89,88 @@ const Work = ({ title, description, projects }) => {
 
       {/* Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 backdrop-blur-sm">
           <div
             ref={modelRef}
-            className="bg-gray-900 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative"
+            className="bg-gray-900 border border-white/10 rounded-2xl shadow-2xl lg:w-full w-[95%] max-w-4xl overflow-hidden relative"
           >
-            <div className="flex justify-end p-4">
-              <button
-                onClick={handleCloseModal}
-                className="text-white text-3xl font-bold hover:text-purple-500"
-              >
-                &times;
-              </button>
-            </div>
+            <button
+              onClick={handleCloseModal}
+              className="absolute top-4 right-4 z-10 text-gray-400 hover:text-white text-3xl transition-colors"
+            >
+              &times;
+            </button>
 
             <div className="flex flex-col">
-              <div className="w-full flex justify-center bg-gray-900 px-4">
+              {/* Media Section */}
+              <div className="w-full bg-black flex justify-center items-center">
                 {selectedProject.video ? (
-                  <video
-                    src={selectedProject.video}
-                    poster={selectedProject.image}
-                    controls
-                    className="lg:w-full max-h-44 sm:max-h-[400px] object-contain rounded-xl shadow-2xl"
-                  />
+                  <div className="w-full aspect-video">
+                    <iframe
+                      src={selectedProject.video.replace("/view?usp=sharing", "/preview")}
+                      className="w-full h-full"
+                      allow="autoplay"
+                      title={selectedProject.title}
+                    ></iframe>
+                  </div>
                 ) : (
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="lg:w-full max-h-44 sm:max-h-[400px] object-contain rounded-xl shadow-2xl"
+                    className="max-h-[450px] object-contain w-full"
                   />
                 )}
               </div>
 
-              <div className="lg:p-8 p-6">
-                <h3 className="lg:text-3xl font-bold text-white mb-4 text-md">
+              {/* Content Section */}
+              <div className="p-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
                   {selectedProject.title}
                 </h3>
-                <p className="text-gray-400 mb-6 lg:text-base text-xs">
+                <p className="text-gray-300 mb-8 leading-relaxed">
                   {selectedProject.description}
                 </p>
 
-                <div className="flex gap-4 justify-center flex-wrap">
+                {/* Action Buttons */}
+                <div className="grid grid-cols-1 sm:flex gap-4">
                   {selectedProject.github && (
                     <a
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full md:w-auto bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-3 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center flex items-center gap-2 justify-center"
+                      className="flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
                     >
-                      <FiGithub className="text-lg" />
-                      View Code
+                      <FiGithub /> View Code
                     </a>
                   )}
-                  {selectedProject.webapp && (
+                  
+                  {/* Priority: Show WebApp/APK if they exist, otherwise show Video link */}
+                  {selectedProject.webapp ? (
                     <a
                       href={selectedProject.webapp}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full md:w-auto bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-3 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center flex items-center gap-2 justify-center"
+                      className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
                     >
-                      <FiExternalLink className="text-lg" />
-                      View Live
+                      <FiExternalLink /> View Live
                     </a>
-                  )}
-                  {selectedProject.apk && (
+                  ) : selectedProject.apk ? (
                     <a
                       href={selectedProject.apk}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full md:w-auto bg-purple-600 hover:bg-purple-800 text-white lg:px-6 lg:py-2 px-3 py-1 rounded-xl lg:text-xl text-sm font-semibold text-center flex items-center gap-2 justify-center"
+                      className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
                     >
-                      <FiDownload className="text-lg" />
-                      Download APK
+                      <FiDownload /> Download APK
+                    </a>
+                  ) : selectedProject.video && (
+                    <a
+                      href={selectedProject.video}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                    >
+                      <FiPlayCircle /> Watch Full Demo
                     </a>
                   )}
                 </div>
